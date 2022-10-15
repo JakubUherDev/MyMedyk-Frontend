@@ -1,0 +1,39 @@
+<div
+    class="top-header-area"
+    [ngClass]="{'bg-color': router.url === '/index-2'}"
+>
+    <div class="container-fluid" *ngIf="topHeaderData">
+        <div class="row align-items-center">
+            <div class="col-xl-8 col-lg-6 col-md-12">
+                <ul class="top-header-contact-info">
+                    <li>
+                        <i class="flaticon-map-location" style="color:var(--primaryColor)"></i>
+                        <p>2 - 4 Twyford Abbey Rd London W5 1EE</p>
+<!--                        {{topHeaderData.location}}-->
+                    </li>
+                    <li>
+                        <i class="flaticon-time-left" style="color:var(--primaryColor)"></i>
+                        {{topHeaderData.officeHours}}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-12">
+                <ul class="top-header-right-side">
+                    <li>
+                        <i class="flaticon-call" style="color:var(--primaryColor)"></i>
+                        <a href="tel:{{topHeaderData.phoneNumber}}">{{topHeaderData.phoneNumber}}</a>
+                    </li>
+                    <li>
+                        <ul class="social">
+                            <li *ngFor="let item of topHeaderData.socials;">
+                                <a href="{{item.link}}" target="_blank">
+                                    <i class="{{item.icon}}" style="color:var(--primaryColor)"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

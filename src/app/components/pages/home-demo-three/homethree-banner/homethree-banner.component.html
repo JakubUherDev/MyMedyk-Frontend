@@ -1,0 +1,21 @@
+<div class="banner-wrapper-area" *ngIf="bannerData">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-12">
+                <div class="banner-wrapper-content">
+                    <span class="sub-title">{{bannerData.subTitle}}</span>
+                    <h1>{{bannerData.title}}</h1>
+                    <p>{{bannerData.paragraph}}</p>
+                    <a routerLink="{{bannerData.buttonLink}}" class="default-btn">
+                        {{bannerData.buttonText}}
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12">
+                <div class="banner-wrapper-image">
+                    <img [src]="bannerData.image.data.attributes.url" alt="banner-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
